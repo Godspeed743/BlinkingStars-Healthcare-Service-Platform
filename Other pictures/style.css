@@ -1,0 +1,85 @@
+ <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#14b8a6",
+              accent: "#8b5cf6",
+              tertiary: "#06b6d4",
+              success: "#10b981",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) rotate(12deg);
+        }
+        100% {
+          transform: translateX(100%) rotate(12deg);
+        }
+      }
+      .animate-shine {
+        animation: shine 8s infinite linear;
+      }
+      .hero-section {
+        background-image: url("https://readdy.ai/api/search-image?query=A%20premium%20and%20sophisticated%20special%20education%20facility%20with%20modern%20architecture.%20The%20scene%20shows%20a%20spacious%2C%20well-lit%20atrium%20with%20high%20ceilings%2C%20interactive%20learning%20zones%2C%20and%20state-of-the-art%20therapeutic%20equipment.%20Natural%20light%20floods%20through%20floor-to-ceiling%20windows%2C%20highlighting%20the%20professional%20and%20luxurious%20environment.%20The%20space%20features%20elegant%20design%20elements%20and%20high-end%20educational%20materials%2C%20creating%20an%20inspiring%20atmosphere%20for%20special%20needs%20education.&width=1600&height=800&seq=hero2&orientation=landscape");
+        background-size: cover;
+        background-position: center;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #4f86c6;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .testimonial-card {
+        background-image: url("https://readdy.ai/api/search-image?query=A%20subtle%2C%20abstract%20pattern%20with%20soft%20flowing%20shapes%20in%20very%20light%20blue%20and%20white%2C%20creating%20a%20gentle%20and%20calming%20background%20texture%20that%20is%20barely%20visible%20but%20adds%20depth.%20The%20pattern%20should%20be%20extremely%20subtle%2C%20almost%20invisible%2C%20with%20very%20low%20contrast.&width=800&height=400&seq=test1&orientation=landscape");
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
