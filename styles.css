@@ -1,0 +1,1588 @@
+/* ==============================================
+   CUSTOM STYLES FOR BLINKING STARS WEBSITE
+   ============================================== */
+
+/* ==============================================
+   GLOBAL STYLES & TYPOGRAPHY
+   ============================================== */
+
+/* Base font family for entire website */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom icon styling for remix icons */
+:where([class^="ri-"])::before {
+  content: "\f3c2";
+}
+
+/* ==============================================
+   ANIMATIONS & KEYFRAMES
+   ============================================== */
+
+/* Shine animation effect for buttons and interactive elements */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(12deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(12deg);
+  }
+}
+
+/* Apply shine animation - used for premium visual effects */
+.animate-shine {
+  animation: shine 8s infinite linear;
+}
+
+/* ==============================================
+   HERO SECTION BACKGROUND
+   ============================================== */
+
+/* Hero section background image styling */
+.hero-section {
+  background-image: url("https://readdy.ai/api/search-image?query=A%20premium%20and%20sophisticated%20special%20education%20facility%20with%20modern%20architecture.%20The%20scene%20shows%20a%20spacious%2C%20well-lit%20atrium%20with%20high%20ceilings%2C%20interactive%20learning%20zones%2C%20and%20state-of-the-art%20therapeutic%20equipment.%20Natural%20light%20floods%20through%20floor-to-ceiling%20windows%2C%20highlighting%20the%20professional%20and%20luxurious%20environment.%20The%20space%20features%20elegant%20design%20elements%20and%20high-end%20educational%20materials%2C%20creating%20an%20inspiring%20atmosphere%20for%20special%20needs%20education.&width=1600&height=800&seq=hero2&orientation=landscape");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Responsive hero section adjustments */
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 500px !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-section {
+    min-height: 600px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero-section {
+    min-height: 700px !important;
+  }
+}
+
+/* ==============================================
+   FORM STYLING
+   ============================================== */
+
+/* Form input focus states - provides visual feedback when user interacts with forms */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4f86c6;
+}
+
+/* Remove default browser styling for number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ==============================================
+   SERVICE CARDS HOVER EFFECTS
+   ============================================== */
+
+/* Service card hover animation - creates smooth lift effect on hover */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* ==============================================
+   TESTIMONIAL SECTION BACKGROUND
+   ============================================== */
+
+/* Testimonial card background styling with subtle pattern */
+.testimonial-card {
+  background-image: url("https://readdy.ai/api/search-image?query=A%20subtle%2C%20abstract%20pattern%20with%20soft%20flowing%20shapes%20in%20very%20light%20blue%20and%20white%2C%20creating%20a%20gentle%20and%20calming%20background%20texture%20that%20is%20barely%20visible%20but%20adds%20depth.%20The%20pattern%20should%20be%20extremely%20subtle%2C%20almost%20invisible%2C%20with%20very%20low%20contrast.&width=800&height=400&seq=test1&orientation=landscape");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Testimonial background color fallback */
+.testimonial-card .py-20.bg-white.relative.overflow-hidden {
+  background-color: white;
+}
+
+/* ==============================================
+   HEADER STYLING
+   ============================================== */
+
+/* Reset all div margins and padding in header */
+header div {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Actions Container - Responsive spacing */
+.header-actions-container {
+  gap: 0.125rem; /* Reduced spacing between groups */
+  flex-wrap: wrap;
+}
+
+/* Social Media Icons Container - Spacing between icons */
+.social-icons-container {
+  gap: 0.0625rem; /* Reduced spacing between social icons */
+}
+
+/* Header Phone Link - Spacing from social icons */
+.header-phone-link {
+  margin-left: 0.25rem;
+}
+
+/* Header Appointment Button - Spacing from phone */
+.header-appointment-btn {
+  margin-left: 0.25rem;
+}
+
+/* Make header content start at the left edge across all pages */
+header .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important; /* remove px-4 spacing so logo is flush to left */
+  padding-right: 0 !important;
+  display: flex !important; /* ensure flex layout */
+  justify-content: flex-start !important; /* start items from left */
+  /* gap: 1rem; small spacing between header groups */
+  flex-wrap: nowrap !important; /* prevent wrapping to keep header in one line */
+}
+
+/* Ensure the logo link has no extra left offset */
+header .container .flex.items-center > a:first-child {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* ==============================================
+   NAVIGATION MENU STYLING
+   ============================================== */
+
+/* Navigation menu styling - creates dropdown menu functionality */
+nav ul {
+  list-style-type: none;
+  background-color: rgba(255, 255, 255, 0.95); /* Exact match with header bg-white/95 */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: black;
+}
+
+/* Reduce navigation item spacing from space-x-4 (1rem) to space-x-3 (0.75rem) */
+nav ul li + li {
+  margin-left: 0.50rem !important;
+}
+
+/* Navigation menu item styling */
+nav ul li {
+  display: inline-block;
+  padding: 10px 8px;
+  margin: 0 1px;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+}
+
+/* Navigation menu link styling */
+nav ul li a {
+  padding: 8px 0;
+  display: block;
+  text-decoration: none;
+  color: black !important;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Navigation menu hover effects - changes color on hover */
+nav ul li:hover {
+  background-color: #6366f1;
+  color: white;
+}
+
+nav ul li:hover a {
+  color: white;
+}
+
+/* ==============================================
+   DROPDOWN MENU FUNCTIONALITY
+   ============================================== */
+
+/* Main navigation menu item positioning */
+nav ul li {
+  position: relative; /* Essential for dropdown positioning */
+}
+
+/* Hide dropdown menus by default */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position directly below the parent menu item */
+  left: 0; /* Align with left edge of parent */
+  min-width: 220px; /* Increased width for consistency */
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+}
+
+/* Show dropdown on hover - creates interactive menu system */
+nav ul li:hover .dropdown {
+  display: block;
+}
+
+/* Dropdown menu styling */
+.dropdown ul {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Second level dropdown menu positioning */
+.dropdown2 {
+  display: none;
+  position: absolute;
+  top: 0; /* Align with parent item */
+  left: 100%; /* Position to the right of parent */
+  min-width: 180px;
+  z-index: 1001;
+  margin: 0;
+  padding: 0;
+}
+
+/* Second level dropdown hover functionality */
+.dropdown ul li:hover .dropdown2 {
+  display: block;
+}
+
+/* Second level dropdown styling */
+.dropdown2 ul {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+}
+
+/* Universal dropdown item styling for consistent layout */
+.dropdown ul li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  position: relative;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 40px !important;
+  box-sizing: border-box !important;
+}
+
+/* Dropdown link styling */
+.dropdown ul li a,
+.dropdown2 ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  color: #374151;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  margin: 2px;
+  min-height: 40px; /* Consistent height */
+  width: calc(100% - 4px);
+  box-sizing: border-box;
+  text-align: left;
+  /* Ensure links align exactly with non-link items */
+  margin-left: 2px !important;
+  padding-left: 16px !important;
+}
+
+/* Dropdown link hover effects */
+.dropdown ul li a:hover,
+.dropdown2 ul li a:hover {
+  background-color: #6366f1;
+  color: white;
+}
+
+/* Non-link dropdown items (like Assessments, Art & Sports, etc.) */
+.dropdown ul li:not(:has(a)),
+.dropdown ul li:not([href]) {
+  padding: 12px 16px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  margin: 2px;
+  min-height: 40px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: calc(100% - 4px) !important;
+  box-sizing: border-box;
+  text-align: left;
+  font-weight: 500;
+  /* Ensure consistent alignment with link items */
+  margin-left: 2px !important;
+  padding-left: 16px !important;
+}
+
+/* Hover effects for non-link items */
+.dropdown ul li:not(:has(a)):hover,
+.dropdown ul li:not([href]):hover {
+  background-color: #6366f1;
+  color: white;
+}
+
+/* Force consistent alignment for ALL dropdown items */
+.dropdown ul li,
+.dropdown ul li a {
+  margin-left: 0 !important;
+  padding-left: 16px !important;
+  text-indent: 0 !important;
+  position: relative;
+  left: 0 !important;
+}
+
+/* Ensure no extra indentation on link elements */
+.dropdown ul li a {
+  padding-left: 16px !important;
+  margin-left: 2px !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+}
+
+/* ==============================================
+   TESTIMONIAL SCROLL FUNCTIONALITY
+   ============================================== */
+
+/* Testimonial wrapper for horizontal scrolling */
+.testimonial-wrapper {
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+
+/* Individual testimonial card styling */
+.testimonial-card {
+  scroll-snap-align: start;
+  min-width: 0; /* Allow flex items to shrink below their content size */
+  background-color: #ffffff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Ensure testimonial text wraps properly */
+.testimonial-card p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  hyphens: auto;
+}
+
+/* Responsive width adjustments */
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 280px !important;
+    min-width: 280px;
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .testimonial-card {
+    width: 350px !important;
+    min-width: 350px;
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .testimonial-card {
+    width: 384px !important;
+    min-width: 384px;
+    max-width: 384px;
+  }
+}
+
+/* ==============================================
+   TESTIMONIAL TEXT FORMATTING
+   ============================================== */
+
+/* Review description text formatting - ensures proper text wrapping */
+.review-description {
+  overflow-wrap: break-word; /* Automatically wrap text */
+  word-wrap: break-word; /* Ensure long words wrap */
+  max-height: 150px; /* Limit height for descriptions */
+  line-height: 1.5; /* Improve readability */
+}
+
+/* ==============================================
+   FLOATING WHATSAPP BUTTON
+   ============================================== */
+
+/* Floating WhatsApp button - stays fixed on screen */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  left: 25px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* WhatsApp button hover effects */
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* WhatsApp button pulse animation */
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #25d366;
+  animation: whatsapp-pulse 2s infinite;
+  z-index: -1;
+}
+
+/* Pulse animation keyframes */
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* ==============================================
+   MOBILE MENU IMPROVEMENTS
+   ============================================== */
+
+/* Mobile menu button hover effect */
+#mobile-menu-button:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile menu close button */
+.mobile-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile menu dropdown arrow animation */
+.mobile-services-arrow,
+.mobile-assessments-arrow,
+.mobile-about-arrow {
+  transition: transform 0.2s ease;
+}
+
+/* Mobile menu link hover effects */
+.mobile-services-dropdown a:hover,
+.mobile-assessments-dropdown a:hover,
+.mobile-about-dropdown a:hover {
+  color: #e5e7eb !important;
+  padding-left: 1.5rem;
+  transition: all 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile menu link active/focus states for better touch feedback */
+.mobile-services-dropdown a:active,
+.mobile-assessments-dropdown a:active,
+.mobile-about-dropdown a:active {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(0.98);
+  transition: all 0.1s ease;
+}
+
+/* Improve touch targets for mobile */
+.mobile-services-dropdown a,
+.mobile-assessments-dropdown a,
+.mobile-about-dropdown a {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 1.25rem;
+  margin: 0.375rem 0;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  font-weight: 500;
+  order: var(--order, 0); /* Ensure serial order */
+}
+
+/* Visual feedback when touch starts */
+.mobile-services-dropdown a:focus,
+.mobile-assessments-dropdown a:focus,
+.mobile-about-dropdown a:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+/* ==============================================
+   DESKTOP NAVIGATION IMPROVEMENTS
+   ============================================== */
+
+/* Better desktop dropdown positioning */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.dropdown2 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 180px;
+  z-index: 1001;
+}
+
+/* ==============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================== */
+
+/* Mobile devices (320px - 768px) */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+  }
+
+  /* Hide desktop navigation on mobile */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Show mobile menu button on mobile */
+  #mobile-menu-button {
+    display: flex;
+  }
+
+  /* Mobile header actions - minimal spacing */
+  .header-actions-container {
+    gap: 0.125rem !important; /* Minimal spacing between groups */
+  }
+
+  .social-icons-container {
+    gap: 0.0625rem !important; /* Minimal spacing between social icons */
+  }
+
+  .header-phone-link {
+    margin-left: 0.125rem !important;
+  }
+
+  .header-appointment-btn {
+    margin-left: 0.125rem !important;
+  }
+
+  /* Mobile navigation menu - minimal spacing */
+  nav ul li {
+    padding: 8px 4px !important;
+    margin: 0 0.5px !important;
+  }
+
+  nav ul li a {
+    font-size: 13px !important;
+  }
+
+  /* Ensure logo is positioned on the left in mobile devices */
+  header .container .flex.items-center.relative {
+    order: -1;
+    margin-right: auto;
+    justify-content: flex-start;
+  }
+
+  header .container .flex.items-center.relative a {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  header .container .flex.items-center.relative img {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Small mobile devices (320px - 480px) */
+@media (max-width: 480px) {
+}
+
+/* Tablet view adjustments (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    bottom: 25px;
+    left: 25px;
+    font-size: 28px;
+  }
+  
+  /* Show mobile menu button on tablet */
+  #mobile-menu-button {
+    display: flex;
+  }
+}
+
+/* Small laptop/desktop (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  #mobile-menu-button {
+    display: none;
+  }
+}
+
+/* Large laptop/desktop (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  #mobile-menu-button {
+    display: none;
+  }
+}
+
+/* Extra large screens (1536px and above) */
+@media (min-width: 1536px) {
+  #mobile-menu-button {
+    display: none;
+  }
+}
+
+/* ==============================================
+   RESPONSIVE NAVIGATION ADJUSTMENTS
+   ============================================== */
+
+/* Extra large screens (1536px and above) - Maximum spacing */
+@media (min-width: 1536px) {
+  nav ul li {
+    padding: 6px 6px !important;
+    margin: 0 0px !important;
+  }
+  
+  nav ul li a {
+    font-size: 16px;
+  }
+  
+  /* Maximum header actions spacing */
+  .header-actions-container {
+    /* gap: 2rem !important; */
+  }
+  
+  .header-phone-link {
+    margin-left: 2rem !important;
+  }
+  
+  .header-appointment-btn {
+    margin-left: 2.5rem !important;
+    padding: 0.625rem 1.5rem !important;
+    font-size: 0.9375rem !important;
+  }
+  
+  .social-icons-container {
+    gap: 0.875rem !important;
+  }
+}
+
+/* Large laptop/desktop (1280px - 1535px) - Good spacing */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  nav ul li {
+    padding: 10px 18px !important;
+    margin: 0 5px !important;
+  }
+  
+  nav ul li a {
+    font-size: 15px;
+  }
+  
+  /* Good header actions spacing */
+  .header-actions-container {
+    gap: 1.75rem !important;
+  }
+  
+  .header-phone-link {
+    margin-left: 1.75rem !important;
+  }
+  
+  .header-appointment-btn {
+    margin-left: 2rem !important;
+    padding: 0.5rem 1.25rem !important;
+  }
+  
+  .social-icons-container {
+    gap: 0.75rem !important;
+  }
+}
+
+/* Medium laptops (1201px - 1279px) - Standard spacing */
+@media (min-width: 1201px) and (max-width: 1279px) {
+  nav ul li {
+    padding: 10px 16px !important;
+    margin: 0 4px !important;
+  }
+  
+  nav ul li a {
+    font-size: 14px;
+  }
+  
+  /* Standard header actions spacing */
+  .header-actions-container {
+    gap: 1.5rem !important;
+  }
+  
+  .header-phone-link {
+    margin-left: 1.5rem !important;
+  }
+  
+  .header-appointment-btn {
+    margin-left: 1.75rem !important;
+  }
+  
+  .social-icons-container {
+    gap: 0.625rem !important;
+  }
+}
+
+/* Smaller laptops (1024px - 1200px) - Reduced spacing */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  nav ul li {
+    padding: 8px 12px !important;
+    margin: 0 3px !important;
+  }
+  
+  nav ul li a {
+    font-size: 13px;
+  }
+  
+  /* Reduced header actions spacing */
+  .header-actions-container {
+    gap: 1rem !important;
+  }
+  
+  .header-phone-link {
+    margin-left: 1rem !important;
+  }
+  
+  .header-appointment-btn {
+    margin-left: 1.25rem !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8125rem !important;
+  }
+  
+  .social-icons-container {
+    gap: 0.5rem !important;
+  }
+  
+  /* Hide some social icons on smaller laptops if needed */
+  .social-icons-container a:nth-child(4),
+  .social-icons-container a:nth-child(5) {
+    display: none !important;
+  }
+}
+
+/* Very tight laptop screens (1024px - 1100px) - Minimal spacing */
+@media (min-width: 1024px) and (max-width: 1100px) {
+  nav ul li {
+    padding: 6px 10px !important;
+    margin: 0 2px !important;
+  }
+  
+  nav ul li a {
+    font-size: 12px;
+  }
+  
+  /* Hide phone icon on very small laptop screens */
+  .hidden.lg\:flex.items-center.text-primary {
+    display: none !important;
+  }
+  
+  /* Reduce header actions spacing */
+  .header-actions-container {
+    gap: 0.75rem !important;
+  }
+  
+  .header-phone-link {
+    margin-left: 0.75rem !important;
+  }
+  
+  .header-appointment-btn {
+    margin-left: 1rem !important;
+    padding: 0.375rem 0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .social-icons-container {
+    gap: 0.5rem !important;
+  }
+}
+
+/* ==============================================
+   COMPREHENSIVE RESPONSIVE FIXES
+   ============================================== */
+
+/* Mobile devices (320px - 640px) */
+@media (max-width: 640px) {
+  /* Hero section text adjustments */
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Section padding adjustments */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Container padding */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Card padding */
+  .service-card,
+  .program-card {
+    padding: 1.25rem !important;
+  }
+  
+  /* Grid gap adjustments */
+  .grid {
+    gap: 1.5rem !important;
+  }
+  
+  /* Button adjustments */
+  button,
+  a[class*="px-8"],
+  a[class*="py-3"] {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Text size adjustments */
+  p {
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Icon sizes */
+  i[class*="ri-"] {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Image responsiveness */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Program card specific adjustments */
+  .program-card h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .program-card p {
+    font-size: 0.875rem !important;
+  }
+  
+  /* Music & Dance hero icons */
+  .float-animation,
+  .dance-animation {
+    font-size: 3rem !important;
+  }
+  
+  /* Benefits grid */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+    gap: 1rem !important;
+  }
+  
+  /* Testimonial wrapper (if still exists) */
+  .testimonial-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Contact section adjustments */
+  #contact {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  #contact .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Contact information cards */
+  #contact .bg-white.p-8 {
+    padding: 1.25rem !important;
+  }
+  
+  /* Contact section heading */
+  #contact h2 {
+    font-size: 1.75rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  #contact h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  /* Contact section description */
+  #contact p.text-gray-600 {
+    font-size: 0.9375rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  /* Popup form textarea on mobile */
+  .popup-form textarea {
+    min-height: 80px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+  
+  /* Popup form container on mobile */
+  .popup-form-container {
+    max-height: 85vh !important;
+    margin: 10px !important;
+  }
+  
+  /* Popup form header on mobile */
+  .popup-form-header {
+    padding: 20px !important;
+  }
+  
+  .popup-form-header h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .popup-form-header p {
+    font-size: 0.875rem !important;
+  }
+  
+  /* Popup form inputs on mobile */
+  .popup-form .form-group input,
+  .popup-form .form-group select,
+  .popup-form .form-group textarea {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    padding: 10px 14px !important;
+  }
+  
+  /* Popup form labels */
+  .popup-form .form-group label {
+    font-size: 0.875rem !important;
+    margin-bottom: 6px !important;
+  }
+  
+  /* Popup submit button on mobile */
+  .popup-submit-btn {
+    padding: 12px !important;
+    font-size: 0.9375rem !important;
+  }
+  
+  /* Service cards grid on mobile */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Service delivery options grid */
+  .grid.grid-cols-1.md\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Audiology tests grid */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Why Choose Us grid */
+  .grid.grid-cols-1.md\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Why Choose Us inner grid */
+  .grid.grid-cols-1.sm\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Tablet devices (641px - 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+  /* Hero section text */
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h2 {
+    font-size: 2rem !important;
+  }
+  
+  /* Section padding */
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  /* Card padding */
+  .service-card,
+  .program-card {
+    padding: 1.5rem !important;
+  }
+  
+  /* Grid gap */
+  .grid {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Small tablets (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  /* Hero section text */
+  h1 {
+    font-size: 3rem !important;
+  }
+  
+  h2 {
+    font-size: 2.25rem !important;
+  }
+  
+  /* Section padding */
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  /* Grid adjustments for 2-column layouts */
+  .grid.grid-cols-1.md\:grid-cols-2 {
+    gap: 2rem !important;
+  }
+  
+  /* Grid adjustments for 3-column layouts */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  
+  /* Grid adjustments for 4-column layouts */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Laptop devices (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Ensure proper grid layouts */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+  
+  /* Card hover effects work properly */
+  .service-card:hover,
+  .program-card:hover {
+    transform: translateY(-5px) !important;
+  }
+}
+
+/* ==============================================
+   SPECIFIC COMPONENT RESPONSIVE FIXES
+   ============================================== */
+
+/* Music & Dance page specific fixes */
+@media (max-width: 768px) {
+  /* Hero section icons spacing */
+  .float-animation + .dance-animation {
+    margin-left: 0.5rem !important;
+  }
+  
+  /* Program cards */
+  .program-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Benefits section */
+  .text-center.p-6 {
+    padding: 1.25rem !important;
+  }
+  
+  /* Who Can Benefit cards */
+  .bg-white.p-6.rounded-xl {
+    padding: 1.25rem !important;
+  }
+}
+
+/* Index page specific fixes */
+@media (max-width: 768px) {
+  /* Service cards */
+  .service-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Service delivery options */
+  .grid.grid-cols-1.md\:grid-cols-3 {
+    gap: 1rem !important;
+  }
+  
+  /* Audiology tests section */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    gap: 1.5rem !important;
+  }
+  
+  /* Why Choose Us section */
+  .grid.grid-cols-1.md\:grid-cols-2 {
+    gap: 1.5rem !important;
+  }
+  
+  /* Contact section - ensure proper spacing */
+  #contact .max-w-2xl {
+    max-width: 100% !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  /* Contact information cards spacing */
+  #contact .bg-white.p-8.rounded-lg {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Contact section icons */
+  #contact .w-10.h-10 {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    min-width: 2.5rem !important;
+  }
+  
+  #contact .w-10.h-10 i {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* Tablet specific fixes */
+@media (min-width: 641px) and (max-width: 1023px) {
+  /* Music & Dance hero */
+  .float-animation,
+  .dance-animation {
+    font-size: 4rem !important;
+  }
+  
+  /* Program cards grid */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  
+  /* Benefits grid */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* ==============================================
+   IMAGE RESPONSIVENESS
+   ============================================== */
+
+/* Ensure all images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Aspect ratio containers */
+.aspect-\[4\/3\] {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+/* Background images responsiveness */
+@media (max-width: 768px) {
+  [class*="bg-cover"],
+  [class*="bg-center"] {
+    background-size: cover !important;
+    background-position: center !important;
+  }
+}
+
+/* ==============================================
+   TEXT RESPONSIVENESS
+   ============================================== */
+
+/* Prevent text overflow */
+h1, h2, h3, h4, h5, h6, p, span, a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Long text handling */
+@media (max-width: 640px) {
+  /* Truncate very long headings if needed */
+  h1, h2 {
+    max-width: 100%;
+  }
+  
+  /* Ensure paragraphs wrap */
+  p {
+    max-width: 100%;
+    word-break: break-word;
+  }
+}
+
+/* ==============================================
+   BUTTON RESPONSIVENESS
+   ============================================== */
+
+@media (max-width: 640px) {
+  /* Button groups */
+  .flex.flex-col.sm\:flex-row {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  
+  /* Full width buttons on mobile */
+  .flex.flex-col.sm\:flex-row a,
+  .flex.flex-col.sm\:flex-row button {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* ==============================================
+   CONTAINER RESPONSIVENESS
+   ============================================== */
+
+/* Ensure containers don't overflow */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ==============================================
+   GRID SYSTEM FIXES
+   ============================================== */
+
+/* Ensure grids stack properly on mobile */
+@media (max-width: 640px) {
+  .grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Override any column spans on mobile */
+  [class*="col-span"] {
+    grid-column: span 1 !important;
+  }
+}
+
+/* Tablet grid adjustments */
+@media (min-width: 641px) and (max-width: 1023px) {
+  /* 2 column grids */
+  .grid.grid-cols-1.md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  
+  /* 3 column grids become 2 columns */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  
+  /* 4 column grids become 2 columns */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* ==============================================
+   OVERFLOW FIXES
+   ============================================== */
+
+/* Prevent horizontal scrolling */
+body, html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Ensure sections don't overflow */
+section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix for cards that might overflow */
+.card,
+.service-card,
+.program-card {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* ==============================================
+   SPACING FIXES
+   ============================================== */
+
+@media (max-width: 640px) {
+  /* Reduce large margins */
+  .mb-16, .mb-12, .mb-8 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .mt-16, .mt-12, .mt-8 {
+    margin-top: 1.5rem !important;
+  }
+  
+  /* Reduce padding */
+  .p-8 {
+    padding: 1.25rem !important;
+  }
+  
+  .px-8 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .py-8 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
+/* ==============================================
+   SERVICE DELIVERY OPTIONS FIXES
+   ============================================== */
+
+/* Service Delivery Options section responsive fixes */
+@media (max-width: 768px) {
+  /* Service delivery options container */
+  .service-delivery-container {
+    padding: 1.5rem !important;
+  }
+  
+  /* Service delivery options title */
+  .service-delivery-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
+  }
+  
+  /* Service delivery options grid - maintain 3 columns on tablet, 1 on mobile */
+  .service-delivery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Individual service delivery option cards */
+  .service-delivery-card {
+    padding: 1.25rem !important;
+    text-align: center !important;
+  }
+  
+  /* Service delivery option icons */
+  .service-delivery-icon {
+    width: 3rem !important;
+    height: 3rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .service-delivery-icon i {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Service delivery option headings */
+  .service-delivery-heading {
+    font-size: 1.125rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  /* Service delivery option descriptions */
+  .service-delivery-description {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+}
+
+/* Tablet adjustments for service delivery options */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .service-delivery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+  }
+  
+  .service-delivery-card {
+    padding: 1.5rem !important;
+  }
+  
+  .service-delivery-icon {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+  
+  .service-delivery-icon i {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Desktop adjustments for service delivery options */
+@media (min-width: 1024px) {
+  .service-delivery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+  }
+  
+  .service-delivery-card {
+    padding: 1.5rem !important;
+  }
+  
+  .service-delivery-icon {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+  
+  .service-delivery-icon i {
+    font-size: 2rem !important;
+  }
+}
+
+/* Ensure proper text wrapping for all service delivery content */
+.service-delivery-description {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+  max-width: 100% !important;
+}
+
+/* Prevent overflow in service delivery cards */
+.service-delivery-card {
+  overflow: hidden !important;
+  max-width: 100% !important;
+}
+/* ==============================================
+   BLINKING STARS ANIMATION
+   ============================================== */
+
+/* Keyframes for blinking stars animation */
+@keyframes blink-stars {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+}
+
+/* Apply blinking animation to star elements */
+.blink-stars {
+  animation: blink-stars 2s infinite ease-in-out;
+}
+
+/* Individual star blinking with staggered timing */
+.blink-stars.star-1 {
+  animation-delay: 0s;
+}
+
+.blink-stars.star-2 {
+  animation-delay: 0.5s;
+}
+
+.blink-stars.star-3 {
+  animation-delay: 1s;
+}
+
+.blink-stars.star-4 {
+  animation-delay: 1.5s;
+}
+
+.blink-stars.star-5 {
+  animation-delay: 2s;
+}
+
+/* Responsive adjustments for blinking stars */
+@media (max-width: 768px) {
+  .blink-stars {
+    animation-duration: 1.5s;
+  }
+}

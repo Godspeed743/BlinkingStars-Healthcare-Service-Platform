@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adult Assessments - Blinking Stars | Comprehensive Adult Psychological Evaluations</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Blinking Stars provides comprehensive adult assessments including cognitive evaluations, personality assessments, psychiatric evaluations, neuropsychological testing, and occupational assessments for adults.">
+    <meta name="keywords" content="adult assessments, adult psychological evaluations, cognitive assessment, personality testing, psychiatric evaluation, neuropsychological testing, occupational assessment, adult mental health assessment">
+    <meta name="author" content="Blinking Stars Healthcare Services">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Adult Assessments - Blinking Stars">
+    <meta property="og:description" content="Comprehensive adult psychological assessments including cognitive, personality, and psychiatric evaluations for adults.">
+    <meta property="og:image" content="https://yourwebsite.com/Blinking Stars Logo.png">
+    <meta property="og:url" content="https://yourwebsite.com/adult-assessment.html">
+    <meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      // Suppress the development warning
+      if (typeof window !== 'undefined' && window.console && window.console.warn) {
+        const originalWarn = window.console.warn;
+        window.console.warn = function(...args) {
+          if (args[0] && args[0].includes && args[0].includes('cdn.tailwindcss.com')) {
+            return; // Suppress Tailwind CDN warning
+          }
+          originalWarn.apply(console, args);
+        };
+      }
+      
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#14b8a6",
+              accent: "#8b5cf6",
+              tertiary: "#06b6d4",
+              success: "#10b981",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+      /* Secret Message - Hidden Easter Egg */
+      .secret-message {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 10px;
+        color: rgba(0, 0, 0, 0);
+        background: rgba(255, 255, 255, 0);
+        padding: 4px 8px;
+        border-radius: 4px;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        z-index: 9999;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.5px;
+        user-select: none;
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      
+      .secret-trigger {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        cursor: default;
+        z-index: 10000;
+      }
+      
+      .secret-trigger:hover ~ .secret-message,
+      .secret-trigger:active ~ .secret-message {
+        opacity: 1;
+        color: rgba(99, 102, 241, 0.6);
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        pointer-events: auto;
+      }
+      
+      .copyright-trigger {
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+      }
+      
+      .copyright-trigger.clicked ~ .secret-message,
+      .copyright-trigger:active ~ .secret-message {
+        opacity: 1;
+        color: rgba(99, 102, 241, 0.7);
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(0);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        pointer-events: auto;
+      }
+      
+      @media (max-width: 768px) {
+        .secret-message {
+          bottom: 15px;
+          right: 15px;
+          font-size: 9px;
+        }
+        
+        .secret-trigger {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <div class="relative w-full">
+        <!-- Main header content -->
+        <div class="container mx-auto px-4 py-1 flex items-center justify-between">
+          <div class="flex items-center relative">
+            <a href="index.html" class="flex items-center"> <img src="Logo/logo img.png" alt="Blinking Stars - Specialized Healthcare Services for Children with Special Needs" style="width: 100px;" height="55px"> </a>
+          </div>
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center space-x-4 relative">
+            <div class="relative group">
+              <ul>
+                  <li><a href="index.html#Home">Home</a></li>
+                  <li><a href="index.html#services">Services</a>
+                      <div class="dropdown">
+                          <ul>
+                              <li>Home/Online based</li>
+                              <li>Assessments 
+                                  <div class="dropdown2">
+                                      <ul>
+                                          <li><a href="children-assessments.html">Children Assessments</a></li>
+                                          <li><a href="adult-assessment.html">Adult Assessments</a></li>
+                                      </ul>
+                                  </div>
+                              </li>
+                              <li><a href="index.html#audiology">Audiology Test</a></li>
+                              <li><a href="art.html">Art</a></li>
+                              <li><a href="music-dance.html">Music & Dance</a></li>
+                              <li><a href="sports.html">Sports</a></li>
+                              <li><a href="internships.html">Internships</a></li>
+                          </ul>
+                      </div>
+                  </li>
+                  <li><a href="index.html#collaborations">Collaborations</a></li>
+                  <li><a href="page2.html">Join Our Team</a></li>
+                  <li>About Us
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="why-choose.html">Why Choose Us</a></li>
+                            <li><a href="blog.html">Blogs and Posts</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        <div class="flex items-center header-actions-container">
+          <!-- Social Media Icons -->
+          <div class="hidden md:flex social-icons-container">
+              <a
+                href="m.html"
+                class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+              >
+                <i class="ri-facebook-fill text-primary text-sm"></i>
+              </a>
+              <a
+                href="m.html"
+                class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+              >
+                <i class="ri-twitter-fill text-primary text-sm"></i>
+              </a>
+              <a
+                href="m.html"
+                class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+              >
+                <i class="ri-instagram-line text-primary text-sm"></i>
+              </a>
+              <a
+                href="m.html"
+                class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+              >
+                <i class="ri-linkedin-fill text-primary text-sm"></i>
+              </a>
+              <a
+                href="m.html"
+                class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+              >
+                <i class="ri-youtube-fill text-primary text-sm"></i>
+              </a>
+            </div>
+          <a
+            href="tel:+918860186082"
+            class="hidden lg:flex items-center text-primary font-medium text-sm header-phone-link"
+          >
+            <div
+              class="w-8 h-8 flex items-center justify-center mr-1 bg-primary/10 rounded-full"
+            >
+              <i class="ri-phone-line text-primary text-sm"></i>
+            </div>
+            <span>+91 8860186082</span>
+          </a>
+          <a
+            href="https://wa.me/918860187278"
+            target="_blank"
+            class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 whitespace-nowrap text-sm header-appointment-btn inline-block"
+          >
+            Book Appointment
+          </a>
+          <button
+            id="mobile-menu-button"
+            class="ml-4 lg:hidden w-10 h-10 flex items-center justify-center text-primary hover:bg-primary/10 rounded-full transition duration-200"
+            aria-label="Toggle mobile menu"
+          >
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="bg-white border-b border-gray-200">
+      <div class="container mx-auto px-4 py-4">
+        <nav class="flex text-sm text-gray-600" aria-label="Breadcrumb">
+          <a href="index.html" class="hover:text-primary transition duration-200">Home</a>
+          <span class="mx-2">/</span>
+          <a href="index.html#services" class="hover:text-primary transition duration-200">Services</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-800 font-medium">Adult Assessments</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section relative py-12 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-accent/80 to-secondary/70"></div>
+      <div class="absolute inset-0 bg-[url('https://readdy.ai/api/search-image?query=Professional%20child%20assessment%20session%20in%20a%20modern%20therapy%20center%20with%20educational%20materials%20and%20assessment%20tools.%20Warm%20lighting%20and%20comfortable%20environment%20for%20children.%20High-end%20pediatric%20assessment%20facility.&width=1920&height=1080&seq=assessment1&orientation=landscape')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+      <div class="absolute -right-40 top-1/2 transform -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl"></div>
+      <div class="absolute -left-20 top-0 w-[250px] h-[250px] bg-secondary/20 rounded-full blur-2xl"></div>
+      <div class="max-w-2xl mx-auto px-4 relative z-10">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            Adult Assessments
+          </h1>
+          <p class="text-white/90 text-lg mb-8 max-w-xl mx-auto">
+           Assessment is the first step toward the right intervention. Standardized assessments provide valuable information that helps our clinical team understand a person's needs and make or rule out a diagnosis.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/918860186082"
+              target="_blank"
+              class="bg-white text-primary px-8 py-3.5 rounded-button font-medium hover:bg-gray-100 transition duration-200 whitespace-nowrap group inline-block"
+            >
+              <span class="flex items-center justify-center">
+                Schedule Assessment
+                <i class="ri-arrow-right-line ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+              </span>
+            </a>
+            <a
+              href="index.html#contact"
+              class="bg-transparent border-2 border-white text-white px-8 py-3.5 rounded-button font-medium hover:bg-white/10 transition duration-200 whitespace-nowrap"
+            >
+              Get More Information
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"></div>
+      </div>
+      <div class="absolute -left-32 top-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute -right-32 bottom-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+      
+      <div class="container mx-auto px-4 relative">
+        <!-- Assessment Types Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+          
+          <!-- PSYCHODIAGNOSTIC ASSESSMENTS-->
+          <div class="bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-white/20 transition duration-300 group hover:shadow-xl hover:bg-white/90 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="mb-6 rounded-lg overflow-hidden">
+              <img
+                src="Adult Assessment images/img1.png"
+                alt="Psychoeducational Assessment"
+                class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500"
+              />
+            </div>
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+              <i class="ri-book-open-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">PSYCHODIAGNOSTIC ASSESSMENTS</h3>
+            <p class="text-gray-600 mb-6">
+              Psychodiagnostic assessments help us understand a person’s personality, behavior patterns, and emotional concerns. Using a set of standardized tests, our clinicians identify the nature and severity of difficulties along with related factors, based on the individual’s needs.
+            </p>
+          </div>
+
+          <!-- COGNITIVE AND NEUROPSYCHOLOGICAL ASSESSMENTS -->
+          <div class="bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-white/20 transition duration-300 group hover:shadow-xl hover:bg-white/90 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="mb-6 rounded-lg overflow-hidden">
+              <img
+                src="Adult Assessment images/img2.png"
+                alt="Neuropsychological Assessment"
+                class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500"
+              />
+            </div>
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+              <i class="ri-brain-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">COGNITIVE AND NEUROPSYCHOLOGICAL ASSESSMENTS</h3>
+            <p class="text-gray-600 mb-6">
+              Neuropsychological assessments help identify and measure difficulties in thinking, memory, or behavior, guiding focused intervention planning. Standardized tests, including IQ assessments when needed, are used for accurate results.
+            </p>
+          </div>
+
+          <!-- PROCESS ASSESSMENTS -->
+          <div class="bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-white/20 transition duration-300 group hover:shadow-xl hover:bg-white/90 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="mb-6 rounded-lg overflow-hidden">
+              <img
+                src="Adult Assessment images/img3.png"
+                alt="Psychodiagnostic Assessment"
+                class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500"
+              />
+            </div>
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+              <i class="ri-heart-pulse-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">PROCESS ASSESSMENTS</h3>
+            <p class="text-gray-600 mb-6">
+              Process assessments help us understand both the severity and specific nature of a client’s concerns, allowing therapists to tailor therapy to individual needs.
+            </p>
+          </div>
+
+          <!-- PERSONALITY ASSESSMENTS -->
+          <div class="bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-white/20 transition duration-300 group hover:shadow-xl hover:bg-white/90 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="mb-6 rounded-lg overflow-hidden">
+              <img
+                src="Adult Assessment images/img4.png"
+                alt="Developmental Assessment"
+                class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500"
+              />
+            </div>
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+              <i class="ri-seedling-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">PERSONALITY ASSESSMENTS</h3>
+            <p class="text-gray-600 mb-6">
+              Personality assessments help identify traits that may underlie a client’s difficulties. Understanding these patterns allows us to address challenges that affect personal, social, and occupational functioning.
+            </p>
+          </div>
+
+          
+        </div>
+
+        <!-- Call to Action Section -->
+        <div class="bg-gradient-to-r from-primary via-accent to-secondary p-8 rounded-lg text-white text-center">
+          <h3 class="text-2xl font-bold mb-4">Ready to Schedule an Assessment?</h3>
+          <p class="text-white/90 mb-6 max-w-2xl mx-auto">
+            Our comprehensive assessment services help identify your unique needs and strengths. 
+            Contact us today to schedule a consultation with our experienced team of specialists.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/918860186082"
+              target="_blank"
+              class="bg-white text-primary px-8 py-3 rounded-button font-medium hover:bg-gray-100 transition duration-200 whitespace-nowrap inline-block"
+            >
+              Schedule Assessment
+            </a>
+            <a
+              href="index.html#contact"
+              class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-button font-medium hover:bg-white/10 transition duration-200 whitespace-nowrap inline-block"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-primary/50 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- Column 1 -->
+          <div>
+            <!-- Logo and Title - Inline on mobile -->
+            <div class="flex items-center mb-6">
+              <img 
+                src="Logo/logo img.png" 
+                alt="Blinking Stars Logo" 
+                class="w-12 h-12 md:w-16 md:h-16 mr-3 object-contain"
+              />
+              <h3 class="text-xl md:text-2xl font-['Pacifico'] m-0">Blinking Stars</h3>
+            </div>
+            <p class="text-gray-300 mb-6">
+              Specialized healthcare services for children with special needs,
+              delivered with care and compassion.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://facebook.com/blinkingstars"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="https://twitter.com/blinkingstars"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="https://instagram.com/blinkingstars"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="https://linkedin.com/company/blinkingstars"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Column 2 -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-200">Home</a></li>
+              <li><a href="index.html#services" class="text-gray-300 hover:text-white transition duration-200">Services</a></li>
+              <li><a href="index.html#audiology" class="text-gray-300 hover:text-white transition duration-200">Audiology Tests</a></li>
+              <li><a href="index.html#why-choose-us" class="text-gray-300 hover:text-white transition duration-200">Why Choose Us</a></li>
+              <li><a href="index.html#contact" class="text-gray-300 hover:text-white transition duration-200">Contact</a></li>
+              <li><a href="index.html#collaborations" class="text-gray-300 hover:text-white transition duration-200">Collaboration</a></li>
+            </ul>
+          </div>
+          <!-- Column 3 -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Assessment Services</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-gray-300 hover:text-white transition duration-200">Psychoeducational Assessment</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition duration-200">Neuropsychological Assessment</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition duration-200">Developmental Assessment</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition duration-200">Behavioral Assessment</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition duration-200">Speech Therapy Assessment</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition duration-200">Special Education Assessment</a></li>
+            </ul>
+          </div>
+          <!-- Column 4 -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+            <p class="text-gray-300 mb-4">
+              Subscribe to our newsletter for the latest updates and resources.
+            </p>
+            <form class="mb-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="px-4 py-2 rounded-l text-gray-800 border-none w-full"
+                />
+                <button
+                  type="submit"
+                  class="bg-primary text-white px-4 py-2 rounded-r hover:bg-primary/90 transition duration-200 whitespace-nowrap"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+            <p class="text-gray-300 text-sm">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-gray-700 text-center md:flex md:justify-between md:text-left">
+          <p class="text-gray-300 mb-4 md:mb-0 copyright-trigger">
+            &copy; 2022 Blinking Stars. All rights reserved.
+          </p>
+          <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 justify-center">
+            <a href="#" class="text-gray-300 hover:text-white transition duration-200">Privacy Policy</a>
+            <a href="#" class="text-gray-300 hover:text-white transition duration-200">Terms of Service</a>
+            <a href="#" class="text-gray-300 hover:text-white transition duration-200">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/918860186082"
+      target="_blank"
+      class="whatsapp-float"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="ri-whatsapp-fill"></i>
+    </a>
+    
+    <!-- Secret Message Easter Egg -->
+    <div class="secret-trigger" aria-hidden="true"></div>
+    <div class="secret-message">Made by: Mohammad Hammad</div>
+    
+    <script>
+      // Secret message reveal on copyright click
+      document.addEventListener('DOMContentLoaded', function() {
+        const copyright = document.querySelector('.copyright-trigger');
+        if (copyright) {
+          let clickCount = 0;
+          copyright.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount >= 3) {
+              const secretMsg = document.querySelector('.secret-message');
+              if (secretMsg) {
+                secretMsg.style.opacity = '1';
+                secretMsg.style.color = 'rgba(99, 102, 241, 0.7)';
+                secretMsg.style.background = 'rgba(255, 255, 255, 0.95)';
+                secretMsg.style.transform = 'translateY(0)';
+                secretMsg.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.15)';
+                secretMsg.style.pointerEvents = 'auto';
+                setTimeout(() => {
+                  secretMsg.style.opacity = '0';
+                  clickCount = 0;
+                }, 3000);
+              }
+            }
+          });
+        }
+      });
+    </script>
+
+    <script src="script.js"></script>
+    <script src="popup-form.js"></script>
+  </body>
+</html>

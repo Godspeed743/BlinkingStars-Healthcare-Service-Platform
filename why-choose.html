@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Force navigation menu text color to black */
+      header nav ul li { color: #000000 !important; }
+      header nav ul li a { color: #000000 !important; }
+      header nav .relative.group ul li { color: #000000 !important; }
+      header nav .relative.group ul li a { color: #000000 !important; }
+    </style>
+     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#14b8a6",
+              accent: "#8b5cf6",
+              tertiary: "#06b6d4",
+              success: "#10b981",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) rotate(12deg);
+        }
+        100% {
+          transform: translateX(100%) rotate(12deg);
+        }
+      }
+      .animate-shine {
+        animation: shine 8s infinite linear;
+      }
+      .hero-section {
+        background-image: url("https://readdy.ai/api/search-image?query=A%20premium%20and%20sophisticated%20special%20education%20facility%20with%20modern%20architecture.%20The%20scene%20shows%20a%20spacious%2C%20well-lit%20atrium%20with%20high%20ceilings%2C%20interactive%20learning%20zones%2C%20and%20state-of-the-art%20therapeutic%20equipment.%20Natural%20light%20floods%20through%20floor-to-ceiling%20windows%2C%20highlighting%20the%20professional%20and%20luxurious%20environment.%20The%20space%20features%20elegant%20design%20elements%20and%20high-end%20educational%20materials%2C%20creating%20an%20inspiring%20atmosphere%20for%20special%20needs%20education.&width=1600&height=800&seq=hero2&orientation=landscape");
+        background-size: cover;
+        background-position: center;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #4f86c6;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .testimonial-card {
+        background-image: url("https://readdy.ai/api/search-image?query=A%20subtle%2C%20abstract%20pattern%20with%20soft%20flowing%20shapes%20in%20very%20light%20blue%20and%20white%2C%20creating%20a%20gentle%20and%20calming%20background%20texture%20that%20is%20barely%20visible%20but%20adds%20depth.%20The%20pattern%20should%20be%20extremely%20subtle%2C%20almost%20invisible%2C%20with%20very%20low%20contrast.&width=800&height=400&seq=test1&orientation=landscape");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Secret Message - Hidden Easter Egg */
+      .secret-message {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 10px;
+        color: rgba(0, 0, 0, 0);
+        background: rgba(255, 255, 255, 0);
+        padding: 4px 8px;
+        border-radius: 4px;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        z-index: 9999;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.5px;
+        user-select: none;
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      /* Secret trigger area - invisible corner */
+      .secret-trigger {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        cursor: default;
+        z-index: 10000;
+      }
+
+      .secret-trigger:hover ~ .secret-message,
+      .secret-trigger:active ~ .secret-message {
+        opacity: 1;
+        color: rgba(99, 102, 241, 0.6);
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        pointer-events: auto;
+      }
+
+      /* Alternative: Show on copyright click */
+      .copyright-trigger {
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+      }
+
+      .copyright-trigger.clicked ~ .secret-message,
+      .copyright-trigger:active ~ .secret-message {
+        opacity: 1;
+        color: rgba(99, 102, 241, 0.7);
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(0);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        pointer-events: auto;
+      }
+
+      @media (max-width: 768px) {
+        .secret-message {
+          bottom: 15px;
+          right: 15px;
+          font-size: 9px;
+        }
+
+        .secret-trigger {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <div class="relative w-full">
+        <!-- Main header content -->
+        <div class="container mx-auto px-4 py-1 flex items-center justify-between">
+          <div class="flex items-center relative">
+            <a href="index.html" class="flex items-center"> <img src="Logo/logo img.png" alt="Blinking Stars - Specialized Healthcare Services for Children with Special Needs" style="width: 100px;" height="55px"> </a>
+          </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-4 relative">
+          <div class="relative group">
+            <ul>
+                <li><a href="index.html#Home">Home</a></li>
+                <li><a href="index.html#services">Services</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li>Home/Online based</li>
+                            <li>Assessments 
+                                <div class="dropdown2">
+                                    <ul>
+                                        <li><a href="children-assessments.html">Children Assessments</a></li>
+                                        <li><a href="adult-assessment.html">Adult Assessments</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="index.html#audiology">Audiology Test</a></li>
+                            <li><a href="art.html">Art</a></li>
+                            <li><a href="music-dance.html">Music & Dance</a></li>
+                            <li><a href="sports.html">Sports</a></li>
+                            <li><a href="internships.html">Internships</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="index.html#collaborations">Collaborations</a></li>
+                <li><a href="page2.html">Join Our Team</a></li>
+                <li>About Us
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="why-choose.html">Why Choose Us</a></li>
+                            <li><a href="blog.html">Blogs and Posts</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="flex items-center header-actions-container">
+          <!-- Social Media Icons -->
+          <div class="hidden md:flex social-icons-container">
+            <a
+              href="https://facebook.com/blinkingstars"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-facebook-fill text-primary text-sm"></i>
+            </a>
+            <a
+              href="https://twitter.com/blinkingstars"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-twitter-fill text-primary text-sm"></i>
+            </a>
+            <a
+              href="https://instagram.com/blinkingstars"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-instagram-line text-primary text-sm"></i>
+            </a>
+            <a
+              href="https://linkedin.com/company/blinkingstars"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-linkedin-fill text-primary text-sm"></i>
+            </a>
+            <a
+              href="https://youtube.com/blinkingstars"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-youtube-fill text-primary text-sm"></i>
+            </a>
+          </div>
+          <a
+            href="tel:+918860187278"
+            class="hidden lg:flex items-center text-primary font-medium text-sm header-phone-link"
+          >
+            <div
+              class="w-8 h-8 flex items-center justify-center mr-1 bg-primary/10 rounded-full"
+            >
+              <i class="ri-phone-line text-primary text-sm"></i>
+            </div>
+            <span>+91 8860187278</span>
+          </a>
+          <a
+            href="https://wa.me/918860187278"
+            target="_blank"
+            class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 whitespace-nowrap text-sm header-appointment-btn inline-block"
+          >
+            Book Appointment
+          </a>
+          <button
+            id="mobile-menu-button"
+            class="ml-4 lg:hidden w-10 h-10 flex items-center justify-center text-primary hover:bg-primary/10 rounded-full transition duration-200"
+            aria-label="Toggle mobile menu"
+          >
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+    </header>
+    <!-- Why Choose Us -->
+     <section id="why-choose-us" class="py-20 relative overflow-hidden">
+      <div class="absolute inset-0">
+        <div
+          class="absolute inset-0 bg-[linear-gradient(135deg,rgba(99,102,241,0.1),rgba(139,92,246,0.05),rgba(20,184,166,0.1))]"
+        ></div>
+        <div
+          class="absolute inset-0 bg-[url('https://readdy.ai/api/search-image?query=Premium%20abstract%20pattern%20with%20shimmering%20light%20rays%20and%20flowing%20energy%20waves.%20Luxurious%20design%20with%20subtle%20rainbow%20reflections%20and%20modern%20geometric%20elements.%20Sophisticated%20background%20with%20an%20ethereal%2C%20magical%20quality.&width=1920&height=1080&seq=bg3&orientation=landscape')] bg-cover bg-center mix-blend-overlay opacity-30"
+        ></div>
+        <div class="absolute inset-0 backdrop-blur-[2px]"></div>
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,rgba(99,102,241,0.2),transparent_70%)]"
+        ></div>
+      </div>
+      <div
+        class="absolute -left-32 top-1/4 w-96 h-96 bg-success/10 rounded-full blur-3xl animate-pulse"
+      ></div>
+      <div
+        class="absolute -right-32 bottom-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"
+        style="animation-delay: 2s"
+      ></div>
+      <div
+        class="absolute left-0 top-0 w-full h-32 bg-gradient-to-b from-white to-transparent"
+      ></div>
+      <div
+        class="absolute left-0 bottom-0 w-full h-32 bg-gradient-to-t from-white to-transparent"
+      ></div>
+      <div class="container mx-auto px-4 relative">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Why Choose Blinking Stars
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            We're dedicated to providing exceptional care and support for
+            children with special needs and their families.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div
+            class="bg-gradient-to-br from-white via-white to-tertiary/5 p-8 rounded-lg shadow-lg border border-gray-100"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <!-- Feature 1 -->
+              <div>
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-home-heart-line text-primary text-xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Home-Based Services
+                </h3>
+                <p class="text-gray-600">
+                  We bring professional care to your home, creating a
+                  comfortable environment for your child.
+                </p>
+              </div>
+              <!-- Feature 2 -->
+              <div>
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-team-line text-primary text-xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Expert Team
+                </h3>
+                <p class="text-gray-600">
+                  Our specialists have extensive experience working with
+                  children with diverse special needs.
+                </p>
+              </div>
+              <!-- Feature 3 -->
+              <div>
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-user-heart-line text-primary text-xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Personalized Care
+                </h3>
+                <p class="text-gray-600">
+                  We develop individualized treatment plans tailored to each
+                  child's unique needs.
+                </p>
+              </div>
+              <!-- Feature 4 -->
+              <div>
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-parent-line text-primary text-xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                  Family Involvement
+                </h3>
+                <p class="text-gray-600">
+                  We partner with families, providing guidance and support
+                  throughout the journey.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col justify-center"
+            style="
+              background-image: url('https://readdy.ai/api/search-image?query=A%20luxurious%20and%20modern%20special%20education%20classroom%20with%20advanced%20learning%20tools%20and%20equipment.%20The%20space%20features%20interactive%20smartboards%2C%20sensory%20integration%20equipment%2C%20and%20colorful%20educational%20materials.%20Natural%20light%20streams%20through%20large%20windows%2C%20creating%20an%20inviting%20and%20high-end%20learning%20environment.%20The%20scene%20showcases%20premium%20educational%20facilities%20and%20professional%20setup.&width=600&height=400&seq=therapy2&orientation=landscape');
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="bg-white/90 p-6 rounded-lg backdrop-blur-sm">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                Our Commitment
+              </h3>
+              <p class="text-gray-700 mb-4">
+                At Blinking Stars, we believe every child deserves the
+                opportunity to reach their full potential. Our integrated
+                approach combines multiple therapies to address the whole child,
+                not just individual symptoms.
+              </p>
+              <p class="text-gray-700">
+                We continuously update our methods based on the latest research
+                to provide the most effective evidence-based interventions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Footer -->
+    <footer
+      class="bg-gradient-to-br from-gray-900 via-gray-800 to-primary/50 text-white pt-16 pb-8"
+    >
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- Column 1 -->
+          <div>
+            <!-- Logo and Title - Inline on mobile -->
+            <div class="flex items-center mb-6">
+              <img 
+                src="Logo/logo img.png" 
+                alt="Blinking Stars Logo" 
+                class="w-12 h-12 md:w-16 md:h-16 mr-3 object-contain"
+              />
+              <h3 class="text-xl md:text-2xl font-['Pacifico'] m-0">Blinking Stars</h3>
+            </div>
+            <p class="text-gray-300 mb-6">
+              Specialized healthcare services for children with special needs,
+              delivered with care and compassion.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="m.html"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="m.html"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="m.html"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="m.html"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Column 2 -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="index.html" class="text-gray-300 hover:text-white transition duration-200">Home</a>
+              </li>
+              <li>
+                <a href="index.html#services" class="text-gray-300 hover:text-white transition duration-200">Services</a>
+              </li>
+              <li>
+                <a href="index.html#audiology" class="text-gray-300 hover:text-white transition duration-200">Audiology Tests</a>
+              </li>
+              <li>
+                <a href="index.html#why-choose-us" class="text-gray-300 hover:text-white transition duration-200">Why Choose Us</a>
+              </li>
+              <li>
+                <a href="index.html#contact" class="text-gray-300 hover:text-white transition duration-200">Contact</a>
+              </li>
+              <li>
+                <a href="index.html#collaborations" class="text-gray-300 hover:text-white transition duration-200">Collaboration</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Column 3 -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Services</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >ABA Therapy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >Physiotherapy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >Occupational Therapy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >Speech Therapy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >Audiology Tests</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >Psychological Assessment</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Column 4 -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+            <p class="text-gray-300 mb-4">
+              Subscribe to our newsletter for the latest updates and resources.
+            </p>
+            <form class="mb-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="px-4 py-2 rounded-l text-gray-800 border-none w-full"
+                />
+                <button
+                  type="submit"
+                  class="bg-primary text-white px-4 py-2 rounded-r hover:bg-primary/90 transition duration-200 whitespace-nowrap"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+            <p class="text-gray-300 text-sm">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-gray-700 text-center md:flex md:justify-between md:text-left"
+        >
+          <p class="text-white-400 mb-4 md:mb-0 copyright-trigger">
+            &copy; 2023 Blinking Stars. All rights reserved.
+          </p>
+          <div
+            class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 justify-center"
+          >
+            <a
+              href="#"
+              class="text-white-400 hover:text-white transition duration-200"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-white-400 hover:text-white transition duration-200"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-white-400 hover:text-white transition duration-200"
+              >Accessibility</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Floating WhatsApp Button -->
+    <a 
+      href="https://wa.me/918860187278" 
+      target="_blank" 
+      class="whatsapp-float" 
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="ri-whatsapp-fill"></i>
+    </a>
+
+    <!-- Popup Contact Form -->
+    <div id="popup-form-overlay" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-form-title" aria-hidden="true">
+      <div class="popup-form-container" tabindex="-1">
+        <div class="popup-form-header">
+          <h3 id="popup-form-title">Get Started Today!</h3>
+          <p>Let us know how we can help your child</p>
+          <button id="close-popup" class="close-popup-btn" aria-label="Close popup">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+        <form id="popup-contact-form" class="popup-form" action="contact-handler.php" method="post" novalidate>
+          <div style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+            <label for="popup-website">Website</label>
+            <input type="text" id="popup-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="popup-name">Name *</label>
+            <input type="text" id="popup-name" name="name" required placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="popup-email">Email Address *</label>
+            <input type="email" id="popup-email" name="email" required placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="popup-phone">Phone Number *</label>
+            <input type="tel" id="popup-phone" name="phone" required placeholder="Enter your phone number">
+          </div>
+          <div class="form-group">
+            <label for="popup-service">Service Interested In *</label>
+            <select id="popup-service" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="shadow-teacher">Shadow Teacher</option>
+              <option value="special-ed">Special Education</option>
+              <option value="aba">ABA Therapy</option>
+              <option value="behavior">Behavior Therapy</option>
+              <option value="speech">Speech Therapy</option>
+              <option value="occupational">Occupational Therapy</option>
+              <option value="physio">Physiotherapy</option>
+              <option value="audiology">Audiology Tests</option>
+              <option value="guidance">Guidance and Counselling</option>
+              <option value="psychological">Psychological Assessment</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="popup-message">Message *</label>
+            <textarea id="popup-message" name="message" rows="4" required placeholder="Tell us about your child's needs..." class="w-full px-4 py-3 rounded border border-gray-300 focus:border-primary focus:outline-none"></textarea>
+          </div>
+          
+          <button type="submit" class="popup-submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loading" style="display: none;">
+              <i class="ri-loader-4-line animate-spin"></i> Sending...
+            </span>
+          </button>
+        </form>
+        <div class="popup-form-footer">
+          <p>We'll contact you within 24 hours</p>
+        </div>
+        <div class="popup-success" id="popup-success-message" style="display: none;"></div>
+        <div class="popup-error" id="popup-error-message" style="display: none;"></div>
+      </div>
+    </div>
+    
+    <!-- Secret Message Easter Egg -->
+    <div class="secret-trigger" aria-hidden="true"></div>
+    <div class="secret-message">Made by: Mohammad Hammad</div>
+    
+    <script>
+      // Secret message reveal on copyright click
+      document.addEventListener('DOMContentLoaded', function() {
+        const copyright = document.querySelector('.copyright-trigger');
+        if (copyright) {
+          let clickCount = 0;
+          copyright.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount >= 3) {
+              const secretMsg = document.querySelector('.secret-message');
+              if (secretMsg) {
+                secretMsg.style.opacity = '1';
+                secretMsg.style.color = 'rgba(99, 102, 241, 0.7)';
+                secretMsg.style.background = 'rgba(255, 255, 255, 0.95)';
+                secretMsg.style.transform = 'translateY(0)';
+                secretMsg.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.15)';
+                secretMsg.style.pointerEvents = 'auto';
+                setTimeout(() => {
+                  secretMsg.style.opacity = '0';
+                  clickCount = 0;
+                }, 3000);
+              }
+            }
+          });
+        }
+      });
+    </script>
+
+<script src="script.js"></script>
+<!-- <script src="contact-form-test.js"></script> -->
+<script src="contact-form.js"></script>
+<script src="popup-form.js"></script>
+</body>
+</html>

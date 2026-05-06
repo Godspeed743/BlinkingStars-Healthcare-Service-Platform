@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /index.html
+Allow: /page2.html
+Allow: /internships.html
+
+# Allow CSS and JS files for better indexing
+Allow: /styles.css
+Allow: /navstyle.css
+Allow: /script.js
+Allow: /contact-form.js
+
+# Allow images
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Block unnecessary files
+Disallow: /contact-form-test.js
+Disallow: /*.txt$
+
+# Sitemap location (add when you create one)
+Sitemap: https://yourwebsite.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1

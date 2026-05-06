@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- White background to match header -->
+  <rect width="200" height="80" fill="#ffffff" rx="8"/>
+  
+  <!-- Main text "Blinking" in aqua color -->
+  <text x="20" y="45" font-family="Pacifico, cursive" font-size="28" font-weight="400" fill="#00FFFF" text-anchor="start">Blinking</text>
+  
+  <!-- Small star after "Blinking" text in black -->
+  <g transform="translate(135, 28)">
+    <path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z" 
+          fill="#000000" 
+          stroke="#000000" 
+          stroke-width="0.5"
+          transform="scale(0.8)"/>
+  </g>
+  
+  <!-- Subtitle "Stars" in a complementary color -->
+  <text x="20" y="65" font-family="Poppins, sans-serif" font-size="14" font-weight="300" fill="#6366f1" text-anchor="start">Stars</text>
+</svg>

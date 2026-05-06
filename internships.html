@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internships - Blinking Stars</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#14b8a6",
+              accent: "#8b5cf6",
+              tertiary: "#06b6d4",
+              success: "#10b981",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+      /* Secret Message - Hidden Easter Egg */
+      .secret-message {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 10px;
+        color: rgba(0, 0, 0, 0);
+        background: rgba(255, 255, 255, 0);
+        padding: 4px 8px;
+        border-radius: 4px;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        z-index: 9999;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.5px;
+        user-select: none;
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      
+      .secret-trigger {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        cursor: default;
+        z-index: 10000;
+      }
+      
+      .secret-trigger:hover ~ .secret-message,
+      .secret-trigger:active ~ .secret-message {
+        opacity: 1;
+        color: rgba(99, 102, 241, 0.6);
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        pointer-events: auto;
+      }
+      
+      .copyright-trigger {
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+      }
+      
+      .copyright-trigger.clicked ~ .secret-message,
+      .copyright-trigger:active ~ .secret-message {
+        opacity: 1;
+        color: rgba(99, 102, 241, 0.7);
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(0);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        pointer-events: auto;
+      }
+      
+      @media (max-width: 768px) {
+        .secret-message {
+          bottom: 15px;
+          right: 15px;
+          font-size: 9px;
+        }
+        
+        .secret-trigger {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <div class="relative w-full">
+        <!-- Main header content -->
+        <div class="container mx-auto px-4 py-1 flex items-center justify-between">
+          <div class="flex items-center relative">
+            <a href="index.html" class="flex items-center"> <img src="Logo/logo img.png" alt="Blinking Stars - Specialized Healthcare Services for Children with Special Needs" style="width: 100px;" height="55px"> </a>
+          </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-4 relative">
+          <div class="relative group">
+            <ul>
+                <li><a href="index.html#Home">Home</a></li>
+                <li><a href="index.html#services">Services</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li>Home/Online based</li>
+                            <li>Assessments 
+                                <div class="dropdown2">
+                                    <ul>
+                                        <li><a href="children-assessments.html">Children Assessments</a></li>
+                                        <li><a href="adult-assessment.html">Adult Assessments</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="index.html#audiology">Audiology Test</a></li>
+                            <li><a href="art.html">Art</a></li>
+                            <li><a href="music-dance.html">Music & Dance</a></li>
+                            <li><a href="sports.html">Sports</a></li>
+                            <li><a href="internships.html">Internships</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="index.html#collaborations">Collaborations</a></li>
+                <li><a href="page2.html">Join Our Team</a></li>
+                <li>About Us
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="why-choose.html">Why Choose Us</a></li>
+                            <li><a href="blog.html">Blogs and Posts</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="flex items-center header-actions-container">
+          <!-- Social Media Icons -->
+          <div class="hidden md:flex social-icons-container">
+            <a
+              href="m.html"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-facebook-fill text-primary text-sm"></i>
+            </a>
+            <a
+              href="m.html"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-twitter-fill text-primary text-sm"></i>
+            </a>
+            <a
+              href="m.html"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-instagram-line text-primary text-sm"></i>
+            </a>
+            <a
+              href="m.html"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-linkedin-fill text-primary text-sm"></i>
+            </a>
+            <a
+              href="m.html"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-youtube-fill text-primary text-sm"></i>
+            </a>
+          </div>
+          <a
+            href="tel:+918860187278"
+            class="hidden lg:flex items-center text-primary font-medium text-sm header-phone-link"
+          >
+            <div
+              class="w-8 h-8 flex items-center justify-center mr-1 bg-primary/10 rounded-full"
+            >
+              <i class="ri-phone-line text-primary text-sm"></i>
+            </div>
+            <span>+91 8860187278</span>
+          </a>
+          <a
+            href="https://wa.me/918860187278"
+            target="_blank"
+            class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 whitespace-nowrap text-sm header-appointment-btn inline-block"
+          >
+            Book Appointment
+          </a>
+          <button
+            id="mobile-menu-button"
+            class="ml-4 lg:hidden w-10 h-10 flex items-center justify-center text-primary hover:bg-primary/10 rounded-full transition duration-200"
+            aria-label="Toggle mobile menu"
+          >
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="py-20 bg-white relative overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(99,102,241,0.1),rgba(139,92,246,0.08),rgba(236,72,153,0.06),rgba(20,184,166,0.05))]"></div>
+        <div class="absolute inset-0 bg-[url('https://readdy.ai/api/search-image?query=Premium%20abstract%20pattern%20with%20soft%20flowing%20waves%20in%20subtle%20pink%20and%20purple%20hues.%20Elegant%20design%20with%20gentle%20prismatic%20effects%20and%20modern%20geometric%20elements.%20Sophisticated%20background%20with%20ethereal%20quality%20and%20very%20low%20opacity.&width=1920&height=1080&seq=pink-bg1&orientation=landscape')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
+        <div class="absolute inset-0 backdrop-blur-[1px]"></div>
+      </div>
+      <div class="absolute -left-32 top-1/4 w-96 h-96 bg-pink-200/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute -right-32 bottom-1/4 w-96 h-96 bg-purple-200/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1.5s"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <h2 class="text-3xl font-bold text-center text-primary mb-10">Internship Opportunities</h2>
+        <p class="text-center text-gray-600 mb-12">
+          Join our dedicated team and make a positive impact in the lives of children.
+          Our internship program offers hands-on experience in a supportive environment.
+        </p>
+        <!-- Internships List -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Speech Therapy Internship -->
+          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20 transition duration-300 group hover:shadow-xl hover:bg-white/90 hover:scale-105 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="mb-6 rounded-lg overflow-hidden relative z-10">
+              <img
+                src="Intership Images/1.png"
+                alt="Speech Therapy Internship"
+                class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500"
+              />
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">Speech and Language Therapy Internship Program</h3>
+              <p class="text-gray-600 mb-5">
+                Enhance Communication Skills Through Real-World Practice
+                Step into the world of speech and language therapy with our hands-on internship. Learn how to support children in improving their communication abilities while gaining real clinical experience in a supportive, child-friendly environment.
+              </p>
+              <a href="#" class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 inline-block">
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Holistic Child Development Internship (Continuum Approach)-->
+          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20 transition duration-300 group hover:shadow-xl hover:bg-white/90 hover:scale-105 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="mb-6 rounded-lg overflow-hidden relative z-10">
+              <img
+                src="Intership Images/2.png"
+                alt="Occupational Therapy Internship"
+                class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500"
+              />
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">Holistic Child Development Internship</h3>
+              <p class="text-gray-600 mb-5">
+                Join a Multidisciplinary Journey in Child Development
+Be a part of an integrated developmental care center where you’ll learn to work across disciplines—speech, occupational, behavioral therapies—to help children grow and thrive holistically.
+Great for psychology, special education, and early intervention learners.
+              </p>
+              <a href="#" class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 inline-block">
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Occupational Therapy Internship Program -->
+          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20 transition duration-300 group hover:shadow-xl hover:bg-white/90 hover:scale-105 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="mb-6 rounded-lg overflow-hidden relative z-10">
+              <img
+                src="Intership Images/3.png"
+                alt="ABA Therapy Internship"
+                class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500"
+              />
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">Occupational Therapy Internship Program</h3>
+              <p class="text-gray-600 mb-5">
+                Hands-On Experience in Pediatric Occupational Therapy
+Support children in developing essential life and motor skills. This internship provides exposure to therapeutic methods that enhance independence in daily living.
+Suitable for OT students seeking practical exposure.
+              </p>
+              <a href="#" class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 inline-block">
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Autism Assistant Course -->
+          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20 transition duration-300 group hover:shadow-xl hover:bg-white/90 hover:scale-105 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="mb-6 rounded-lg overflow-hidden relative z-10">
+              <img
+                src="Intership Images/4.png"
+                alt="Physiotherapy Internship"
+                class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500"
+              />
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">Autism Assistant Course</h3>
+              <p class="text-gray-600 mb-5">
+                Practical Training to Support Children with Autism
+This beginner-friendly course equips you with techniques to assist children on the autism spectrum in everyday settings. Perfect for caregivers, teachers, and aspiring therapists.
+No prior experience needed.
+              </p>
+              <a href="#" class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 inline-block">
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Pediatric Physiotherapy Internship Program -->
+          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20 transition duration-300 group hover:shadow-xl hover:bg-white/90 hover:scale-105 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="mb-6 rounded-lg overflow-hidden relative z-10">
+              <img
+                src="Intership Images/5.png"
+                alt="Special Education Internship"
+                class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-500"
+              />
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">Pediatric Physiotherapy Internship Program</h3>
+              <p class="text-gray-600 mb-5">
+                Empowering Children Through Movement and Play
+Learn how physiotherapy enhances mobility, strength, and coordination in children. This internship offers direct experience with pediatric rehab techniques under expert guidance.
+Tailored for physiotherapy students passionate about pediatrics.
+              </p>
+              <a href="#" class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 inline-block">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer
+      class="bg-gradient-to-br from-gray-900 via-gray-800 to-primary/50 text-white pt-16 pb-8"
+    >
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- Column 1 -->
+          <div>
+            <!-- Logo and Title - Inline on mobile -->
+            <div class="flex items-center mb-6">
+              <img 
+                src="Logo/logo img.png" 
+                alt="Blinking Stars Logo" 
+                class="w-12 h-12 md:w-16 md:h-16 mr-3 object-contain"
+              />
+              <h3 class="text-xl md:text-2xl font-['Pacifico'] m-0">Blinking Stars</h3>
+            </div>
+            <p class="text-gray-300 mb-6">
+              Specialized healthcare services for children with special needs,
+              delivered with care and compassion.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://facebook.com/blinkingstars"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="https://twitter.com/blinkingstars"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="https://instagram.com/blinkingstars"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="https://linkedin.com/company/blinkingstars"
+                target="_blank"
+                class="text-gray-300 hover:text-white transition duration-200"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Column 2 -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="index.html" class="text-gray-300 hover:text-white transition duration-200">Home</a>
+              </li>
+              <li>
+                <a href="index.html#services" class="text-gray-300 hover:text-white transition duration-200">Services</a>
+              </li>
+              <li>
+                <a href="index.html#audiology" class="text-gray-300 hover:text-white transition duration-200">Audiology Tests</a>
+              </li>
+              <li>
+                <a href="index.html#why-choose-us" class="text-gray-300 hover:text-white transition duration-200">Why Choose Us</a>
+              </li>
+              <li>
+                <a href="index.html#contact" class="text-gray-300 hover:text-white transition duration-200">Contact</a>
+              </li>
+              <li>
+                <a href="internships.html" class="text-gray-300 hover:text-white transition duration-200">Internships</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Column 3 -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Services</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >ABA Therapy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >Physiotherapy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >Occupational Therapy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >Speech Therapy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >Audiology Tests</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition duration-200"
+                  >Psychological Assessment</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Column 4 -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+            <p class="text-gray-300 mb-4">
+              Subscribe to our newsletter for the latest updates and resources.
+            </p>
+            <form class="mb-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="px-4 py-2 rounded-l text-gray-800 border-none w-full"
+                />
+                <button
+                  type="submit"
+                  class="bg-primary text-white px-4 py-2 rounded-r hover:bg-primary/90 transition duration-200 whitespace-nowrap"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+            <p class="text-gray-300 text-sm">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-gray-700 text-center md:flex md:justify-between md:text-left"
+        >
+          <p class="text-gray-400 mb-4 md:mb-0 copyright-trigger">
+            &copy; 2022 Blinking Stars. All rights reserved.
+          </p>
+          <div
+            class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 justify-center"
+          >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition duration-200"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition duration-200"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition duration-200"
+              >Accessibility</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Floating WhatsApp Button -->
+    <a 
+      href="https://wa.me/918860187278" 
+      target="_blank" 
+      class="whatsapp-float" 
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="ri-whatsapp-fill"></i>
+    </a>
+    
+    <!-- Secret Message Easter Egg -->
+    <div class="secret-trigger" aria-hidden="true"></div>
+    <div class="secret-message">Made by: Mohammad Hammad</div>
+    
+    <script>
+      // Secret message reveal on copyright click
+      document.addEventListener('DOMContentLoaded', function() {
+        const copyright = document.querySelector('.copyright-trigger');
+        if (copyright) {
+          let clickCount = 0;
+          copyright.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount >= 3) {
+              const secretMsg = document.querySelector('.secret-message');
+              if (secretMsg) {
+                secretMsg.style.opacity = '1';
+                secretMsg.style.color = 'rgba(99, 102, 241, 0.7)';
+                secretMsg.style.background = 'rgba(255, 255, 255, 0.95)';
+                secretMsg.style.transform = 'translateY(0)';
+                secretMsg.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.15)';
+                secretMsg.style.pointerEvents = 'auto';
+                setTimeout(() => {
+                  secretMsg.style.opacity = '0';
+                  clickCount = 0;
+                }, 3000);
+              }
+            }
+          });
+        }
+      });
+    </script>
+
+    <!-- Add JavaScript for mobile menu functionality -->
+    <script src="script.js"></script>
+    <script src="popup-form.js"></script>
+  </body>
+</html>

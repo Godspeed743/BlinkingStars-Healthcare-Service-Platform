@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team</title>
+    <link rel="stylesheet" href="styles.css">
+     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#14b8a6",
+              accent: "#8b5cf6",
+              tertiary: "#06b6d4",
+              success: "#10b981",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) rotate(12deg);
+        }
+        100% {
+          transform: translateX(100%) rotate(12deg);
+        }
+      }
+      .animate-shine {
+        animation: shine 8s infinite linear;
+      }
+      .hero-section {
+        background-image: url("https://readdy.ai/api/search-image?query=A%20premium%20and%20sophisticated%20special%20education%20facility%20with%20modern%20architecture.%20The%20scene%20shows%20a%20spacious%2C%20well-lit%20atrium%20with%20high%20ceilings%2C%20interactive%20learning%20zones%2C%20and%20state-of-the-art%20therapeutic%20equipment.%20Natural%20light%20floods%20through%20floor-to-ceiling%20windows%2C%20highlighting%20the%20professional%20and%20luxurious%20environment.%20The%20space%20features%20elegant%20design%20elements%20and%20high-end%20educational%20materials%2C%20creating%20an%20inspiring%20atmosphere%20for%20special%20needs%20education.&width=1600&height=800&seq=hero2&orientation=landscape");
+        background-size: cover;
+        background-position: center;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #4f86c6;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .testimonial-card {
+        background-image: url("https://readdy.ai/api/search-image?query=A%20subtle%2C%20abstract%20pattern%20with%20soft%20flowing%20shapes%20in%20very%20light%20blue%20and%20white%2C%20creating%20a%20gentle%20and%20calming%20background%20texture%20that%20is%20barely%20visible%20but%20adds%20depth.%20The%20pattern%20should%20be%20extremely%20subtle%2C%20almost%20invisible%2C%20with%20very%20low%20contrast.&width=800&height=400&seq=test1&orientation=landscape");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Secret Message - Hidden Easter Egg */
+      .secret-message {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 10px;
+        color: rgba(0, 0, 0, 0);
+        background: rgba(255, 255, 255, 0);
+        padding: 4px 8px;
+        border-radius: 4px;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        z-index: 9999;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.5px;
+        user-select: none;
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      /* Secret trigger area - visible corner */
+      .secret-trigger {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        background: rgba(0, 0, 0, 0.1);
+        cursor: default;
+        z-index: 10000;
+      }
+
+      .secret-trigger:hover ~ .secret-message,
+      .secret-trigger:active ~ .secret-message {
+        opacity: 1;
+        color: rgba(99, 102, 241, 0.6);
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        pointer-events: auto;
+      }
+
+      /* Alternative: Show on copyright click */
+      .copyright-trigger {
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+      }
+
+      .copyright-trigger.clicked ~ .secret-message,
+      .copyright-trigger:active ~ .secret-message {
+        opacity: 1;
+        color: rgba(99, 102, 241, 0.7);
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(0);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        pointer-events: auto;
+      }
+
+      @media (max-width: 768px) {
+        .secret-message {
+          bottom: 15px;
+          right: 15px;
+          font-size: 9px;
+        }
+
+        .secret-trigger {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <div class="relative w-full">
+        <!-- Main header content -->
+        <div class="container mx-auto px-4 py-1 flex items-center justify-between">
+          <div class="flex items-center relative">
+            <a href="index.html" class="flex items-center"> <img src="Logo/logo img.png" alt="Blinking Stars - Specialized Healthcare Services for Children with Special Needs" style="width: 100px;" height="55px"> </a>
+          </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-4 relative">
+          <div class="relative group">
+            <ul>
+                <li><a href="index.html#Home">Home</a></li>
+                <li><a href="index.html#services">Services</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li>Home/Online based</li>
+                            <li>Assessments 
+                                <div class="dropdown2">
+                                    <ul>
+                                        <li><a href="children-assessments.html">Children Assessments</a></li>
+                                        <li><a href="adult-assessment.html">Adult Assessments</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="index.html#audiology">Audiology Test</a></li>
+                            <li><a href="art.html">Art</a></li>
+                            <li><a href="music-dance.html">Music & Dance</a></li>
+                            <li><a href="sports.html">Sports</a></li>
+                            <li><a href="internships.html">Internships</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="index.html#collaborations">Collaborations</a></li>
+                <li><a href="page2.html">Join Our Team</a></li>
+                <li>About Us
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="why-choose.html">Why Choose Us</a></li>
+                            <li><a href="blog.html">Blogs and Posts</a></li>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="flex items-center header-actions-container">
+          <!-- Social Media Icons -->
+          <div class="hidden md:flex social-icons-container">
+            <a
+              href="https://facebook.com/blinkingstars"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-facebook-fill text-primary text-sm"></i>
+            </a>
+            <a
+              href="https://twitter.com/blinkingstars"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-twitter-fill text-primary text-sm"></i>
+            </a>
+            <a
+              href="https://instagram.com/blinkingstars"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-instagram-line text-primary text-sm"></i>
+            </a>
+            <a
+              href="https://linkedin.com/company/blinkingstars"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-linkedin-fill text-primary text-sm"></i>
+            </a>
+            <a
+              href="https://youtube.com/blinkingstars"
+              target="_blank"
+              class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition duration-200"
+            >
+              <i class="ri-youtube-fill text-primary text-sm"></i>
+            </a>
+          </div>
+          <a
+            href="tel:+918860187278"
+            class="hidden lg:flex items-center text-primary font-medium text-sm header-phone-link"
+          >
+            <div
+              class="w-8 h-8 flex items-center justify-center mr-1 bg-primary/10 rounded-full"
+            >
+              <i class="ri-phone-line text-primary text-sm"></i>
+            </div>
+            <span>+91 8860187278</span>
+          </a>
+          <a
+            href="https://wa.me/918860187278"
+            target="_blank"
+            class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 whitespace-nowrap text-sm header-appointment-btn inline-block"
+          >
+            Book Appointment
+          </a>
+          <button
+            id="mobile-menu-button"
+            class="ml-4 lg:hidden w-10 h-10 flex items-center justify-center text-primary hover:bg-primary/10 rounded-full transition duration-200"
+            aria-label="Toggle mobile menu"
+          >
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="careers" class="py-20 relative overflow-hidden">
+      <div class="absolute inset-0">
+        <div
+          class="absolute inset-0 bg-[linear-gradient(150deg,rgba(99,102,241,0.1),rgba(139,92,246,0.05),rgba(20,184,166,0.1))]"
+        ></div>
+        <div
+          class="absolute inset-0 bg-[url('https://readdy.ai/api/search-image?query=Modern%20abstract%20pattern%20with%20flowing%20iridescent%20waves%20and%20prismatic%20light%20effects.%20Premium%20design%20with%20subtle%20rainbow%20reflections%20and%20crystalline%20structures.%20Sophisticated%20background%20with%20a%20magical%2C%20professional%20quality.&width=1920&height=1080&seq=bg4&orientation=landscape')] bg-cover bg-center mix-blend-overlay opacity-30"
+        ></div>
+        <div class="absolute inset-0 backdrop-blur-[2px]"></div>
+        <div
+          class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_80%,rgba(20,184,166,0.2),transparent_70%)]"
+        ></div>
+      </div>
+      <div
+        class="absolute -left-32 top-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse"
+      ></div>
+      <div
+        class="absolute -right-32 bottom-1/4 w-96 h-96 bg-tertiary/10 rounded-full blur-3xl animate-pulse"
+        style="animation-delay: 2.5s"
+      ></div>
+      <div
+        class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent"
+      ></div>
+      <div class="container mx-auto px-4 relative">
+        <div class="text-center mb-16">
+          <img
+            src="https://readdy.ai/api/search-image?query=A%20professional%20healthcare%20team%20meeting%20in%20a%20modern%20medical%20facility.%20The%20scene%20shows%20diverse%20medical%20professionals%20collaborating%20in%20a%20premium%20hospital%20setting.%20The%20environment%20features%20contemporary%20design%20elements%20and%20advanced%20medical%20equipment.%20Natural%20lighting%20and%20sophisticated%20interiors%20create%20an%20upscale%20workplace%20atmosphere.&width=1200&height=400&seq=career1&orientation=landscape"
+            alt="Career Opportunities"
+            class="w-full rounded-2xl shadow-xl mb-16 object-cover"
+          />
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Join Our Team
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Be part of a dedicated team making a difference in children's lives.
+            We offer rewarding career opportunities for healthcare
+            professionals.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <!-- Position 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <div
+              class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="ri-mental-health-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              ABA Therapists
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Join our team of behavior analysts providing evidence-based
+              interventions.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">BCBA certification required</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">2+ years experience</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">Competitive salary</span>
+              </li>
+            </ul>
+            <button
+              class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 whitespace-nowrap w-full"
+            >
+              Apply Now
+            </button>
+          </div>
+          <!-- Position 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <div
+              class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="ri-speak-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              Speech Therapists
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Help children develop communication and language skills.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">Master's degree required</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">State licensure</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">Flexible schedule</span>
+              </li>
+            </ul>
+            <button
+              class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 whitespace-nowrap w-full"
+            >
+              Apply Now
+            </button>
+          </div>
+          <!-- Position 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <div
+              class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="ri-psychotherapy-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              Occupational Therapists
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Support children in developing daily living and motor skills.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">OT certification</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">Pediatric experience</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">Benefits package</span>
+              </li>
+            </ul>
+            <button
+              class="bg-primary text-white px-6 py-2 rounded-button font-medium hover:bg-primary/90 transition duration-200 whitespace-nowrap w-full"
+            >
+              Apply Now
+            </button>
+          </div>
+        </div>
+        <div
+          class="bg-gradient-to-br from-primary/5 to-accent/5 p-8 rounded-lg shadow-md border border-gray-100"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+                Why Work With Us?
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1"
+                  >
+                    <i class="ri-award-line text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800 mb-1">
+                      Professional Growth
+                    </h4>
+                    <p class="text-gray-600">
+                      Continuous learning and development opportunities
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1"
+                  >
+                    <i class="ri-heart-line text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800 mb-1">
+                      Supportive Environment
+                    </h4>
+                    <p class="text-gray-600">
+                      Collaborative team and work-life balance
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1"
+                  >
+                    <i class="ri-shield-star-line text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800 mb-1">
+                      Comprehensive Benefits
+                    </h4>
+                    <p class="text-gray-600">
+                      Health insurance, retirement plans, and more
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <img
+                src="https://readdy.ai/api/search-image?query=A%20diverse%20group%20of%20healthcare%20professionals%20collaborating%20in%20a%20modern%20medical%20facility.%20The%20scene%20shows%20positive%20workplace%20interaction%20with%20advanced%20medical%20equipment%20in%20the%20background.%20Premium%20office%20environment%20with%20contemporary%20design%20elements%20and%20natural%20lighting.&width=600&height=400&seq=team1&orientation=landscape"
+                alt="Team Collaboration"
+                class="rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Floating WhatsApp Button -->
+    <a 
+      href="https://wa.me/918860187278" 
+      target="_blank" 
+      class="whatsapp-float" 
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="ri-whatsapp-fill"></i>
+    </a>
+    
+    <!-- Secret Message Easter Egg -->
+    <div class="secret-trigger" aria-hidden="true"></div>
+    <div class="secret-message">Made by: Mohammad Hammad</div>
+
+    <!-- Add JavaScript for mobile menu functionality -->
+    <script src="script.js"></script>
+    <script src="popup-form.js"></script>
+</body>
+</html>

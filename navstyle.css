@@ -1,0 +1,36 @@
+.site-main-header-inner-wrap {
+    min-height: 108px;
+}
+
+.header-navigation .header-menu-container ul ul.sub-menu,
+.header-navigation .header-menu-container ul ul.submenu {
+    background: var(--global-palette3);
+    box-shadow: 0px 2px 13px 0px rgba(0,0,0,0.1);
+}
+
+.header-navigation .header-menu-container ul ul li.menu-item > a {
+    width: 200px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: var(--global-palette8);
+    font-size: 12px;
+}
+
+.header-navigation .header-menu-container ul ul li.menu-item > a:hover {
+    color: var(--global-palette9);
+    background: var(--global-palette4);
+}
+
+.header-navigation .header-menu-container ul ul li.menu-item.current-menu-item > a {
+    color: var(--global-palette9);
+    background: var(--global-palette4);
+}
+
+.mobile-navigation ul li {
+    font-size: 14px;
+}
+
+.mobile-navigation ul li a {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
